@@ -1,0 +1,39 @@
+<!-- sidenav permet d'avoir un menu lateral(drawer) et un main -->
+<!-- Vous pouvez configurer pour que le menu lateral disparaît pour les mobiles -->
+<mat-sidenav-container class="sidenav-container">
+  <!-- Début du menu lateral(drawer) -->
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="'navigation'"
+      [mode]="'over'"
+      [opened]="false">
+    <!-- Affichage du mot Menu pour les ordinateurs -->
+    <mat-toolbar>Menu</mat-toolbar> 
+    <!-- Début du menu de navigation -->
+    <mat-nav-list>
+      <a mat-list-item href="#">Link 1</a>
+      <a mat-list-item href="#">Link 2</a>
+      <a mat-list-item href="#">Link 3</a>
+    </mat-nav-list>
+    <!-- Fin du menu de navigation -->
+  </mat-sidenav>
+  <!-- Fin du menu lateral -->
+  <!-- Début du main(le corps principal de l'application ) -->
+  <mat-sidenav-content>
+    <!-- Affichage du menu pour les versions mobiles-->
+    <mat-toolbar color="primary">
+      <!-- Ce  bouton apparaît pour les mobiles pour cacher/afficher le menu de navigation -->
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <!-- Nom du site que vous pouvez changer à tout moment -->
+      <span>stop-food-waste</span>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+  <!-- Fin du corps principal de  l'application -->
+</mat-sidenav-container>
