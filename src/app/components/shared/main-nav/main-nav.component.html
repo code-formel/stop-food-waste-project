@@ -1,13 +1,17 @@
 <!-- sidenav permet d'avoir un menu lateral(drawer) et un main -->
-<!-- Vous pouvez configurer pour que le menu lateral disparaît pour les mobiles -->
+<!-- Vous pouvez choisir la disposition de votre menu quand il s'ouvre et comment-->
 <mat-sidenav-container class="sidenav-container">
-  <!-- Début du menu lateral(drawer) -->
+  <!-- Début du menu latéral(drawer) c'est à dire quand la sidenav s'ouvre -->
   <mat-sidenav #drawer class="sidenav" fixedInViewport
       [attr.role]="'navigation'"
       [mode]="'over'"
       [opened]="false">
-    <!-- Affichage du mot Menu pour les ordinateurs -->
-    <mat-toolbar>Menu <mat-icon (click)="drawer.close()">close </mat-icon></mat-toolbar> 
+    <!-- Affichage du mot Menu quand la sidenav s'ouvre -->
+    <mat-toolbar>
+      Menu
+       <!--On ajoute une icône avec une action pour fermer le menu latéral  -->
+      <mat-icon (click)="drawer.close()">close </mat-icon>
+    </mat-toolbar> 
     <!-- Début du menu de navigation -->
     <mat-nav-list>
       <a mat-list-item href="#">Link 1</a>
@@ -16,17 +20,17 @@
     </mat-nav-list>
     <!-- Fin du menu de navigation -->
   </mat-sidenav>
-  <!-- Fin du menu lateral -->
+  <!-- Fin du menu latéral -->
   <!-- Début du main(le corps principal de l'application ) -->
   <mat-sidenav-content>
-    <!-- Affichage du menu pour les versions mobiles-->
+    <!-- Affichage du header qui est la toolbar(en bleu)-->
     <mat-toolbar color="primary">
-      <!-- Ce  bouton apparaît pour les mobiles pour cacher/afficher le menu de navigation -->
+      <!-- Ce  bouton apparaît  pour cacher/afficher le menu latéral de navigation(sidenav) -->
       <button
         type="button"
         aria-label="Toggle sidenav"
         mat-icon-button
-        (click)="drawer.toggle()"
+        (click)="drawer.open()"
         >
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
