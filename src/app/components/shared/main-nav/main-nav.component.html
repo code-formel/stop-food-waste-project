@@ -7,7 +7,7 @@
       [mode]="'over'"
       [opened]="false">
     <!-- Affichage du mot Menu pour les ordinateurs -->
-    <mat-toolbar>Menu</mat-toolbar> 
+    <mat-toolbar>Menu <mat-icon (click)="drawer.close()">close </mat-icon></mat-toolbar> 
     <!-- Début du menu de navigation -->
     <mat-nav-list>
       <a mat-list-item href="#">Link 1</a>
